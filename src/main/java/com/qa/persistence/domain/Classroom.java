@@ -6,13 +6,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Proxy(lazy = false)
 public class Classroom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int classroomId;
     private String trainer;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Trainee> traineeList;
 
     public Classroom() {

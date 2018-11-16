@@ -11,31 +11,59 @@ public class Endpoint {
     @Inject
     private ClassroomService classroomService;
 
-    @Path("/retrieveclassroom")
+    @Path("/classroom")
     @GET
     @Produces({"application/json"})
     public String getAllClassrooms(){
         return classroomService.getAllClassrooms();
     }
 
-    @Path("/retrieveclassroom")
+    @Path("/trainee")
+    @GET
+    @Produces({"application/json"})
+    public String getAllTrainees(){
+        return classroomService.getAllTrainees();
+    }
+
+    @Path("/classroom")
     @POST
     @Produces({"application/json"})
     public String addClassroom(String classroom){
         return classroomService.addClassroom(classroom);
     }
 
-    @Path("/changeclassroom/{id}")
+    @Path("/trainee")
+    @POST
+    @Produces({"application/json"})
+    public String addTrainee(String trainee){
+        return classroomService.addTrainee(trainee);
+    }
+
+    @Path("/classroom/{id}")
     @PUT
     @Produces({"application/json"})
     public String updateClassroom(@PathParam("id") int id, String classroomToUpdate){
         return classroomService.updateClassroom(id, classroomToUpdate);
     }
 
-    @Path("/changeclassroom/{id}")
+    @Path("/trainee/{id}")
+    @PUT
+    @Produces({"application/json"})
+    public String updateTrainee(@PathParam("id") int id, String traineeToUpdate){
+        return classroomService.updateTrainee(id, traineeToUpdate);
+    }
+
+    @Path("/classroom/{id}")
     @DELETE
     @Produces({"application/json"})
     public String deleteClassroom(@PathParam("id") int id){
         return classroomService.deleteClassroom(id);
+    }
+
+    @Path("/trainee/{id}")
+    @DELETE
+    @Produces({"application/json"})
+    public String deleteTrainee(@PathParam("id") int id){
+        return classroomService.deleteTrainee(id);
     }
 }

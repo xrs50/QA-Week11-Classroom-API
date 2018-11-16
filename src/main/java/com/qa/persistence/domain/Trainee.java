@@ -1,6 +1,5 @@
 package com.qa.persistence.domain;
 
-import org.hibernate.annotations.Proxy;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Proxy(lazy = false)
 public class Trainee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

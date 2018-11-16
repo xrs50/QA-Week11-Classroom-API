@@ -5,4 +5,9 @@ public interface ClassroomRepository {
     String createClassroom(String classroom);
     String updateClassroom(int id, String classroomToUpdate);
     String deleteClassroom(int id);
+
+    String getAllTrainees();
+    String createTrainee(String trainee);
+    String updateTrainee(int id, String traineeToUpdate);
+    String deleteTrainee(int id);
 }

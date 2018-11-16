@@ -11,7 +11,7 @@ public class Classroom {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int classroomId;
     private String trainer;
-    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Trainee> traineeList;
 
     public Classroom() {

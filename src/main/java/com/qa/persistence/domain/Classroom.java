@@ -1,18 +1,15 @@
 package com.qa.persistence.domain;
 
-import org.hibernate.annotations.Proxy;
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Proxy(lazy = false)
 public class Classroom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int classroomId;
     private String trainer;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Trainee> traineeList;
 
     public Classroom() {

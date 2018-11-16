@@ -37,4 +37,35 @@ public class ClassroomServiceImpl implements ClassroomService{
     public String deleteClassroom(int id) {
         return classroomRepository.deleteClassroom(id);
     }
+
+    @Override
+    public String getAllTrainees() {
+        return classroomRepository.getAllTrainees();
+    }
+
+    @Transactional(REQUIRED)
+    @Override
+    public String addTrainee(String trainee) {
+        return classroomRepository.createTrainee(trainee);
+    }
+
+    @Transactional(REQUIRED)
+    @Override
+    public String updateTrainee(int id, String traineeToUpdate) {
+        return classroomRepository.updateTrainee(id, traineeToUpdate);
+    }
+
+    @Transactional(REQUIRED)
+    @Override
+    public String deleteTrainee(int id) {
+        return classroomRepository.deleteTrainee(id);
+    }
+
+    public ClassroomRepository getClassroomRepository() {
+        return classroomRepository;
+    }
+
+    public void setClassroomRepository(ClassroomRepository classroomRepository) {
+        this.classroomRepository = classroomRepository;
+    }
 }

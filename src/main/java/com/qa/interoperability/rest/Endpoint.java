@@ -11,28 +11,28 @@ public class Endpoint {
     @Inject
     private ClassroomService classroomService;
 
-    @Path("/getclassroom")
+    @Path("/retrieveclassroom")
     @GET
     @Produces({"application/json"})
     public String getAllClassrooms(){
         return classroomService.getAllClassrooms();
     }
 
-    @Path("/postclassroom")
+    @Path("/retrieveclassroom")
     @POST
     @Produces({"application/json"})
     public String addClassroom(String classroom){
         return classroomService.addClassroom(classroom);
     }
 
-    @Path("/putclassroom/{id}")
+    @Path("/changeclassroom/{id}")
     @PUT
     @Produces({"application/json"})
     public String updateClassroom(@PathParam("id") int id, String classroomToUpdate){
         return classroomService.updateClassroom(id, classroomToUpdate);
     }
 
-    @Path("/deleteclassroom/{id}")
+    @Path("/changeclassroom/{id}")
     @DELETE
     @Produces({"application/json"})
     public String deleteClassroom(@PathParam("id") int id){

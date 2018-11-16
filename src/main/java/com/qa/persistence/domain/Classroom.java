@@ -1,9 +1,12 @@
 package com.qa.persistence.domain;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Proxy(lazy = false)
 public class Classroom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
